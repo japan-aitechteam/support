@@ -1,19 +1,98 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta charset="UTF-8"><title>サポート | パシャっと献立 / 今日何着る？</title></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support | パシャっと献立 / 今日何着る？</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif; line-height: 1.6; margin: 24px; }
+    header { margin-bottom: 16px; }
+    nav { display: flex; gap: 8px; margin: 12px 0 20px; }
+    button.lang { padding: 8px 12px; border: 1px solid #ccc; background: #fff; border-radius: 8px; cursor: pointer; }
+    button.lang[aria-pressed="true"] { background: #0b5fff; color: #fff; border-color: #0b5fff; }
+    section { max-width: 720px; }
+    hr { margin: 24px 0; }
+    .muted { color: #666; font-size: 0.95em; }
+    a { word-break: break-all; }
+  </style>
+</head>
 <body>
-  <h1>サポート</h1>
+  <header>
+    <h1 id="page-title">サポート / Support</h1>
+    <p class="muted" id="page-note">日本語 / English を切り替えできます。</p>
 
-  <h2>パシャっと献立</h2>
-  <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
-  <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
-  <p><a href="https://japan-aitechteam.github.io/privacy-policy/">プライバシーポリシー</a></p>
+    <nav aria-label="Language switch">
+      <button class="lang" id="btn-ja" aria-pressed="true" type="button">日本語</button>
+      <button class="lang" id="btn-en" aria-pressed="false" type="button">English</button>
+    </nav>
+  </header>
 
-  <hr>
+  <!-- ===================== -->
+  <!-- 日本語 -->
+  <!-- ===================== -->
+  <section id="content-ja" lang="ja">
+    <h2>パシャっと献立</h2>
+    <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
+    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+    <p><a href="https://japan-aitechteam.github.io/privacy-policy/">プライバシーポリシー</a></p>
 
-  <h2>今日何着る？</h2>
-  <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
-  <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
-  <p><a href="https://japan-aitechteam.github.io/Privacy-Policy-weather2/">プライバシーポリシー</a></p>
+    <hr>
+
+    <h2>今日何着る？</h2>
+    <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
+    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+    <p><a href="https://japan-aitechteam.github.io/Privacy-Policy-weather2/">プライバシーポリシー</a></p>
+  </section>
+
+  <!-- ===================== -->
+  <!-- English -->
+  <!-- ===================== -->
+  <section id="content-en" lang="en" style="display:none;">
+    <h2>Pashatto Kondate</h2>
+    <p>If you have questions or would like to report an issue, please contact us at:</p>
+    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+    <p><a href="https://japan-aitechteam.github.io/privacy-policy/">Privacy Policy</a></p>
+
+    <hr>
+
+    <h2>What to Wear Today?</h2>
+    <p>If you have questions or would like to report an issue, please contact us at:</p>
+    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+    <p><a href="https://japan-aitechteam.github.io/Privacy-Policy-weather2/">Privacy Policy</a></p>
+  </section>
+
+  <script>
+    (function () {
+      const btnJa = document.getElementById("btn-ja");
+      const btnEn = document.getElementById("btn-en");
+      const ja = document.getElementById("content-ja");
+      const en = document.getElementById("content-en");
+
+      function setLang(lang) {
+        const isJa = lang === "ja";
+        ja.style.display = isJa ? "" : "none";
+        en.style.display = isJa ? "none" : "";
+        btnJa.setAttribute("aria-pressed", String(isJa));
+        btnEn.setAttribute("aria-pressed", String(!isJa));
+        document.documentElement.lang = isJa ? "ja" : "en";
+        // URLに言語を保持（共有/戻る対策）
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", isJa ? "ja" : "en");
+        window.history.replaceState(null, "", url.toString());
+      }
+
+      // 初期言語：URL ?lang= / ブラウザ言語
+      const urlLang = new URL(window.location.href).searchParams.get("lang");
+      if (urlLang === "en" || urlLang === "ja") {
+        setLang(urlLang);
+      } else {
+        const pref = (navigator.language || "").toLowerCase();
+        setLang(pref.startsWith("ja") ? "ja" : "en");
+      }
+
+      btnJa.addEventListener("click", () => setLang("ja"));
+      btnEn.addEventListener("click", () => setLang("en"));
+    })();
+  </script>
 </body>
 </html>
