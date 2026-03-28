@@ -3,17 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Support | パシャっと献立 / 今日何着る？</title>
+  <title>Support | パシャっと献立 / 今日何着る？ / Totonou</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif; line-height: 1.6; margin: 24px; }
-    header { margin-bottom: 16px; }
-    nav { display: flex; gap: 8px; margin: 12px 0 20px; }
-    button.lang { padding: 8px 12px; border: 1px solid #ccc; background: #fff; border-radius: 8px; cursor: pointer; }
-    button.lang[aria-pressed="true"] { background: #0b5fff; color: #fff; border-color: #0b5fff; }
-    section { max-width: 720px; }
-    hr { margin: 24px 0; }
-    .muted { color: #666; font-size: 0.95em; }
-    a { word-break: break-all; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+      line-height: 1.6;
+      margin: 24px;
+      background: #fafafa;
+      color: #111;
+    }
+    header {
+      margin-bottom: 16px;
+    }
+    nav {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 20px;
+    }
+    button.lang {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button.lang[aria-pressed="true"] {
+      background: #0b5fff;
+      color: #fff;
+      border-color: #0b5fff;
+    }
+    section {
+      max-width: 720px;
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .muted {
+      color: #666;
+      font-size: 0.95em;
+    }
+    a {
+      word-break: break-all;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    h1, h2 {
+      line-height: 1.3;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    p {
+      margin: 8px 0;
+    }
   </style>
 </head>
 <body>
@@ -31,34 +80,76 @@
   <!-- 日本語 -->
   <!-- ===================== -->
   <section id="content-ja" lang="ja">
-    <h2>パシャっと献立</h2>
-    <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
-    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
-    <p><a href="https://japan-aitechteam.github.io/privacy-policy/">プライバシーポリシー</a></p>
+    <div class="app-card">
+      <h2>パシャっと献立</h2>
+      <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
+      <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+      <p><a href="https://japan-aitechteam.github.io/privacy-policy/">プライバシーポリシー</a></p>
+    </div>
 
-    <hr>
+    <div class="app-card">
+      <h2>今日何着る？</h2>
+      <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
+      <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+      <p><a href="https://japan-aitechteam.github.io/Privacy-Policy-weather2/">プライバシーポリシー</a></p>
+    </div>
 
-    <h2>今日何着る？</h2>
-    <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
-    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
-    <p><a href="https://japan-aitechteam.github.io/Privacy-Policy-weather2/">プライバシーポリシー</a></p>
+    <div class="app-card">
+      <h2>Totonou</h2>
+      <p>30分集中・5分休憩のサイクルで、作業リズムを整えるタイマーアプリです。</p>
+
+      <p><strong>主な機能</strong></p>
+      <ul>
+        <li>集中タイマーと休憩タイマー</li>
+        <li>通知による開始・終了のお知らせ</li>
+        <li>シンプルで使いやすい画面</li>
+      </ul>
+
+      <p><strong>お問い合わせ</strong></p>
+      <p>ご不明点や不具合のご連絡は、下記メールまでお願いいたします。</p>
+      <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+
+      <p><strong>プライバシーポリシー</strong></p>
+      <p><a href="https://japan-aitechteam.github.io/privacy-policy-totonou/">プライバシーポリシー</a></p>
+    </div>
   </section>
 
   <!-- ===================== -->
   <!-- English -->
   <!-- ===================== -->
   <section id="content-en" lang="en" style="display:none;">
-    <h2>Pashatto Kondate</h2>
-    <p>If you have questions or would like to report an issue, please contact us at:</p>
-    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
-    <p><a href="https://japan-aitechteam.github.io/privacy-policy/">Privacy Policy</a></p>
+    <div class="app-card">
+      <h2>Pashatto Kondate</h2>
+      <p>If you have questions or would like to report an issue, please contact us at:</p>
+      <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+      <p><a href="https://japan-aitechteam.github.io/privacy-policy/">Privacy Policy</a></p>
+    </div>
 
-    <hr>
+    <div class="app-card">
+      <h2>Weather Outfit Guide</h2>
+      <p>If you have questions or would like to report an issue, please contact us at:</p>
+      <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+      <p><a href="https://japan-aitechteam.github.io/Privacy-Policy-weather2/#privacy-en">Privacy Policy</a></p>
+    </div>
 
-    <h2>Weather Outfit Guide</h2>
-    <p>If you have questions or would like to report an issue, please contact us at:</p>
-    <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
-    <p><a href="https://japan-aitechteam.github.io/Privacy-Policy-weather2/#privacy-en">Privacy Policy</a></p>
+    <div class="app-card">
+      <h2>Totonou</h2>
+      <p>A simple timer app designed to help you stay productive with 30-minute focus sessions and 5-minute breaks.</p>
+
+      <p><strong>Features</strong></p>
+      <ul>
+        <li>Focus and break timer</li>
+        <li>Notifications for session start and end</li>
+        <li>Simple and clean interface</li>
+      </ul>
+
+      <p><strong>Contact</strong></p>
+      <p>If you have questions or would like to report an issue, please contact us at:</p>
+      <p><a href="mailto:aitech.apps00001111@gmail.com">aitech.apps00001111@gmail.com</a></p>
+
+      <p><strong>Privacy Policy</strong></p>
+      <p><a href="https://japan-aitechteam.github.io/privacy-policy-totonou/#privacy-en">Privacy Policy</a></p>
+    </div>
   </section>
 
   <script>
@@ -75,13 +166,12 @@
         btnJa.setAttribute("aria-pressed", String(isJa));
         btnEn.setAttribute("aria-pressed", String(!isJa));
         document.documentElement.lang = isJa ? "ja" : "en";
-        // URLに言語を保持（共有/戻る対策）
+
         const url = new URL(window.location.href);
         url.searchParams.set("lang", isJa ? "ja" : "en");
         window.history.replaceState(null, "", url.toString());
       }
 
-      // 初期言語：URL ?lang= / ブラウザ言語
       const urlLang = new URL(window.location.href).searchParams.get("lang");
       if (urlLang === "en" || urlLang === "ja") {
         setLang(urlLang);
